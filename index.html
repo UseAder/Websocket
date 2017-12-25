@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>webSocket</title>
+		<meta name="viewport" content="initial-scale=1">
+	</head>
+	<body>
+		<div id="chatroom" style="width:400px;height:300px;overflow:auto;border:1px solid black;"></div>
+		<input type="text" name="sayinput" id="sayinput" value=""><br/>
+		<input type="button" name="send" id="sendbutton" value="发送">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" src="./socketClient.js"></script>
+		<script type="text/javascript">
+			// document.onkeyup = function(event){
+			// 	if(event.keyCode = 13){
+			// 		send();
+			// 	}
+			// }
+			$("#sendbutton").click(function() {
+				send();
+			});
+			function send() {
+				ws.send($('#sayinput').val());
+			}
+		</script>
+	</body>
+
+</html>
